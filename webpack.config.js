@@ -493,7 +493,6 @@ module.exports = {
     new ExtractTextPlugin({
       "filename": "[name].[contenthash:20].bundle.css"
     }),
-    new SuppressExtractedTextChunksWebpackPlugin(),
     new CleanCssWebpackPlugin(),
     new EnvironmentPlugin({
       "NODE_ENV": "production"
