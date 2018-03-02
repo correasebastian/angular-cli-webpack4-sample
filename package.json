@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "webpack-dev-server --port=4200",
+    "start": "webpack-dev-server --port=4200 --open",
     "build": "webpack --mode=production",
     "test": "karma start ./karma.conf.js",
     "lint": "ng lint",
