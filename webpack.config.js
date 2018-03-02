@@ -13,7 +13,7 @@ const postcssImports = require('postcss-import');
 
 const { NoEmitOnErrorsPlugin, EnvironmentPlugin, HashedModuleIdsPlugin } = require('webpack');
 const { BaseHrefWebpackPlugin, SuppressExtractedTextChunksWebpackPlugin, CleanCssWebpackPlugin, BundleBudgetPlugin, PostcssCliResources } = require('@angular/cli/plugins/webpack');
-const { CommonsChunkPlugin, ModuleConcatenationPlugin } = require('webpack').optimize;
+const { ModuleConcatenationPlugin } = require('webpack').optimize;
 const { LicenseWebpackPlugin } = require('license-webpack-plugin');
 const { PurifyPlugin } = require('@angular-devkit/build-optimizer');
 const { AngularCompilerPlugin } = require('@ngtools/webpack');
@@ -490,19 +490,6 @@ module.exports = {
     }
     }),
     new BaseHrefWebpackPlugin({}),
-    new CommonsChunkPlugin({
-      "name": [
-        "inline"
-      ],
-      "minChunks": null
-    }),
-    new CommonsChunkPlugin({
-      "name": [
-        "main"
-      ],
-      "minChunks": 2,
-      "async": "common"
-    }),
     new ExtractTextPlugin({
       "filename": "[name].[contenthash:20].bundle.css"
     }),
